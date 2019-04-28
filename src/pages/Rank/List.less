@@ -1,0 +1,134 @@
+@import "../../less/common";
+
+.container{
+  padding-top: @headerHeight;
+  color:@fontColor;
+  background-color: #f8f8f9;
+}
+
+.body{
+  padding-top: 20px;
+  :global{
+    .fixed-width > div{
+      background-color: #fff;
+    }
+  }
+}
+
+.filter_box{
+  padding:0 20px;
+  border-top: 2px solid @activeColor;
+  margin-bottom: 20px;
+  font-size: 13px;
+  .collapse_box{
+    transition:height .3s;
+    overflow: hidden;
+  }
+  .filter_content{
+    padding: 20px 0;
+    border-bottom:1px solid #d9d9d9;
+  }
+  .filter_item{
+    display: flex;
+    margin-bottom: 16px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .filter_label{
+      letter-spacing: 5px;
+      flex:0 0 auto;
+    }
+    .filter_value{
+      flex:1;
+      .filter_select{
+        display: flex;
+        .filter_select_item{
+          min-width: 22px;
+          text-align: center;
+          line-height: 22px;
+          border-radius: 11px;
+          padding: 0 6px;
+          margin-left: 8px;
+          cursor: pointer;
+          &:first-child{
+            margin-left: 0;
+          }
+          &:hover{
+            color: @activeColor;
+          }
+          &:global(.active){
+            background-color: @activeColor;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &.filter_item_border{
+      border-bottom: 1px solid #d9d9d9;
+      padding-bottom: 12px;
+      .filter_select{
+        .filter_select_item{
+          &:first-child{
+            margin-left: 0;
+          }
+          &:hover{
+            color: @activeColor;
+          }
+          &:global(.active){
+            position: relative;
+            color: @activeColor;
+            background-color: #fff;
+            &:after{
+              content: " ";
+              display: block;
+              position: absolute;
+              bottom: -13px;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background-color: #fd113a;
+            }
+          }
+        }
+      }
+    }
+  }
+  .filter_bottom{
+    line-height: 47px;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+    &:hover{
+      color:#666;
+    }
+    :global{
+      .anticon{
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.list_header,
+.list_footer{
+  padding:20px;
+  :global{
+    .ant-pagination{
+      text-align: right;
+    }
+  }
+}
+
+
+.list_view{
+  padding:0 20px;
+  :global{
+    .wct-flex-line{
+      margin-bottom: 20px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

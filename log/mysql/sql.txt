@@ -1,0 +1,1376 @@
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select * from comic where id = 2304
+*******************************************
+select * from chapter where comicId = 2304
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id in (5352,8942,9589,213,2043)
+*******************************************
+select count(id) total from comic where status = '1'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352,4608,5632,6144,6912,7168,7424,7680,7936,8448,8704,8960,9728,9984,10240,10496,11008,11264,11520,12288,12544,12800,13056,14336,14848,15104,15360,15616,16640,17152,17920,18176,18432,18688,18944,19200,19456,19712,19968,20224,20480,20736,20992,21248,21504,21760,22016,22272,22528,22784,23040,23296,23552,24064,24320,24576,24832,25088,25600,26112) group by comicId;
+*******************************************
+select * from comic  where status = '1'  order by hits desc  limit 0,70
+*******************************************
+select * from label where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352,4608,5632,6144,6912,7168,7424,7680,7936,8448,8704,8960,9728,9984,10240,10496,11008,11264,11520,12288,12544,12800,13056,14336,14848,15104,15360,15616,16640,17152,17920,18176,18432,18688,18944,19200,19456,19712,19968,20224,20480,20736,20992,21248,21504,21760,22016,22272,22528,22784,23040,23296,23552,24064,24320,24576,24832,25088,25600,26112)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,6040,10894,11041,11689,12535,12544,12670,12693,12917,12959,13039,13141,13156,13170,13172,13290,13305,13378,13395,13404,13410,13421,13479,13521,13524,13595,13598,13640,13692,13704,13897,13898,13922,14124,14221,14297,14305,14358,14395,14435,14669,14674,14711,14832,15175,15234,15264,15299,15692,15753,15760,15816,15885,15933,16076,16080,16171,16276,16301,16336,16351,16593,16613,16618,16627,16653,16659,16736,16786) group by comicId;
+*******************************************
+select * from label where comicId in (2766,6040,10894,11041,11689,12535,12544,12670,12693,12917,12959,13039,13141,13156,13170,13172,13290,13305,13378,13395,13404,13410,13421,13479,13521,13524,13595,13598,13640,13692,13704,13897,13898,13922,14124,14221,14297,14305,14358,14395,14435,14669,14674,14711,14832,15175,15234,15264,15299,15692,15753,15760,15816,15885,15933,16076,16080,16171,16276,16301,16336,16351,16593,16613,16618,16627,16653,16659,16736,16786)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 70,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (16859,16885,17131,17141,17145,17147,17351,17391,17398,17438,17444,17491,17623,17665,17690,17702,17765,17767,17789,17793,17799,17804,17817,17826,17833,17847,17866,17867,17895,17900,17901,17905,17907,17923,17929,17936,17938,17939,17941,17943,17956,17978,18168,18184,18186,18194,18196,18201,18216,18223,18237,18242,18247,18250,18324,18824,24014,24016,25240,25243,25285,25330,25488,25489,25524,25554,25702,25735,25806,25893) group by comicId;
+*******************************************
+select * from label where comicId in (16859,16885,17131,17141,17145,17147,17351,17391,17398,17438,17444,17491,17623,17665,17690,17702,17765,17767,17789,17793,17799,17804,17817,17826,17833,17847,17866,17867,17895,17900,17901,17905,17907,17923,17929,17936,17938,17939,17941,17943,17956,17978,18168,18184,18186,18194,18196,18201,18216,18223,18237,18242,18247,18250,18324,18824,24014,24016,25240,25243,25285,25330,25488,25489,25524,25554,25702,25735,25806,25893)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 140,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (27019,27223,27241,27289,27671,27901,27944,28157,28284,28321,28344,28388,28439,28659,28748,28749,28937,28989,28993,29022,29048,29049,29061,29150,29151,29255,29431,29438,29442,29515,29622,29640,29666,29691,29807,29808,29882,29886,29904,29914,29989,30039,30065,30151,30161,30295,30303,30314,30461,30630,30636,30661,30821,30917,30920,30957,30972,31073,31110,31118,31119,31151,31253,31312,31336,31369,31410,31428,31502,31523) group by comicId;
+*******************************************
+select * from label where comicId in (27019,27223,27241,27289,27671,27901,27944,28157,28284,28321,28344,28388,28439,28659,28748,28749,28937,28989,28993,29022,29048,29049,29061,29150,29151,29255,29431,29438,29442,29515,29622,29640,29666,29691,29807,29808,29882,29886,29904,29914,29989,30039,30065,30151,30161,30295,30303,30314,30461,30630,30636,30661,30821,30917,30920,30957,30972,31073,31110,31118,31119,31151,31253,31312,31336,31369,31410,31428,31502,31523)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 210,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (31593,31599,31634,31641,31947,32230,32435,32533,32547,32586,32652,32740,32894,32913,32997,33069,33193,33449,33533,33600,33604,33618,33636,33719,33904,34089,34149,34307,34639,34786,34794,34833,34852,34872,34890,34899,35187,35218,35222,35293,35332,35333,35342,35350,35373,35378,35396,35450,35551,35577,35582,35611,35736,35918,36068,36103,36236,36292,36436,36460,36535,36563,36648,37161,37274,37579,37620,38073,38227,38345) group by comicId;
+*******************************************
+select * from label where comicId in (31593,31599,31634,31641,31947,32230,32435,32533,32547,32586,32652,32740,32894,32913,32997,33069,33193,33449,33533,33600,33604,33618,33636,33719,33904,34089,34149,34307,34639,34786,34794,34833,34852,34872,34890,34899,35187,35218,35222,35293,35332,35333,35342,35350,35373,35378,35396,35450,35551,35577,35582,35611,35736,35918,36068,36103,36236,36292,36436,36460,36535,36563,36648,37161,37274,37579,37620,38073,38227,38345)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 280,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593) group by comicId;
+*******************************************
+select * from label where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 280,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593) group by comicId;
+*******************************************
+select * from label where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 280,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593) group by comicId;
+*******************************************
+select * from label where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '0' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '0' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 280,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (32152,32260,32270,32302,32331,32332,32357,32365,32385,32483,32642,32729,32860,32885,32929,33045,33131,33435,33516,33571,33592,33594,33597,33621,33625,33629,33661,33670,33690,33695,33711,33765,33800,33813,33830,33872,33878,33902,33906,33975,34007,34043,34132,34178,34339,34376,34529,34545,34749,34755,34762,34776,34832,34853,34914,34930,34932,35038,35058,35062,35093,35171,35225,35274,35360,35366,35403,35440,35448,35474) group by comicId;
+*******************************************
+select * from label where comicId in (32152,32260,32270,32302,32331,32332,32357,32365,32385,32483,32642,32729,32860,32885,32929,33045,33131,33435,33516,33571,33592,33594,33597,33621,33625,33629,33661,33670,33690,33695,33711,33765,33800,33813,33830,33872,33878,33902,33906,33975,34007,34043,34132,34178,34339,34376,34529,34545,34749,34755,34762,34776,34832,34853,34914,34930,34932,35038,35058,35062,35093,35171,35225,35274,35360,35366,35403,35440,35448,35474)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '0' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '0' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 490,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (40445,40449,40463,40495,40509,40510,40514,40522,40535,40549,40710,40735,40785,40811,40843,40893,41030,41044,41050,41053,41222,41237,41370,41429,41501,41553,41628,41632) group by comicId;
+*******************************************
+select * from label where comicId in (40445,40449,40463,40495,40509,40510,40514,40522,40535,40549,40710,40735,40785,40811,40843,40893,41030,41044,41050,41053,41222,41237,41370,41429,41501,41553,41628,41632)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 490,70
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 490,70
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id in (7677,4981,5170,2280,6162)
+*******************************************
+select * from comic where id = 2159
+*******************************************
+select * from chapter where comicId = 2159
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,6040,10894,11041,11689,12535,12544,12670,12693,12917,12959,13039,13141,13156,13170,13172,13290,13305,13378,13395,13404,13410,13421,13479,13521,13524,13595,13598,13640,13692,13704,13897,13898,13922,14124,14221,14297,14305,14358,14395,14435,14669,14674,14711,14832,15175,15234,15264,15299,15692,15753,15760,15816,15885,15933,16076,16080,16171,16276,16301,16336,16351,16593,16613,16618,16627,16653,16659,16736,16786) group by comicId;
+*******************************************
+select * from label where comicId in (2766,6040,10894,11041,11689,12535,12544,12670,12693,12917,12959,13039,13141,13156,13170,13172,13290,13305,13378,13395,13404,13410,13421,13479,13521,13524,13595,13598,13640,13692,13704,13897,13898,13922,14124,14221,14297,14305,14358,14395,14435,14669,14674,14711,14832,15175,15234,15264,15299,15692,15753,15760,15816,15885,15933,16076,16080,16171,16276,16301,16336,16351,16593,16613,16618,16627,16653,16659,16736,16786)
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 280,70
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593) group by comicId;
+*******************************************
+select * from label where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593)
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 280,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593) group by comicId;
+*******************************************
+select * from label where comicId in (38543,38626,38683,38764,39199,39336,39363,39372,39421,39484,39540,39604,39856,39997,40711,40824,40830,40929,41369,41593)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,6040,10894,11041,11689,12535,12544,12670,12693,12917,12959,13039,13141,13156,13170,13172,13290,13305,13378,13395,13404,13410,13421,13479,13521,13524,13595,13598,13640,13692,13704,13897,13898,13922,14124,14221,14297,14305,14358,14395,14435,14669,14674,14711,14832,15175,15234,15264,15299,15692,15753,15760,15816,15885,15933,16076,16080,16171,16276,16301,16336,16351,16593,16613,16618,16627,16653,16659,16736,16786) group by comicId;
+*******************************************
+select * from label where comicId in (2766,6040,10894,11041,11689,12535,12544,12670,12693,12917,12959,13039,13141,13156,13170,13172,13290,13305,13378,13395,13404,13410,13421,13479,13521,13524,13595,13598,13640,13692,13704,13897,13898,13922,14124,14221,14297,14305,14358,14395,14435,14669,14674,14711,14832,15175,15234,15264,15299,15692,15753,15760,15816,15885,15933,16076,16080,16171,16276,16301,16336,16351,16593,16613,16618,16627,16653,16659,16736,16786)
+*******************************************
+select count(id) total from comic where status = '1'
+*******************************************
+select * from comic  where status = '1'  order by hits desc  limit 0,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352,4608,5632,6144,6912,7168,7424,7680,7936,8448,8704,8960,9728,9984,10240,10496,11008,11264,11520,12288,12544,12800,13056,14336,14848,15104,15360,15616,16640,17152,17920,18176,18432,18688,18944,19200,19456,19712,19968,20224,20480,20736,20992,21248,21504,21760,22016,22272,22528,22784,23040,23296,23552,24064,24320,24576,24832,25088,25600,26112) group by comicId;
+*******************************************
+select * from label where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352,4608,5632,6144,6912,7168,7424,7680,7936,8448,8704,8960,9728,9984,10240,10496,11008,11264,11520,12288,12544,12800,13056,14336,14848,15104,15360,15616,16640,17152,17920,18176,18432,18688,18944,19200,19456,19712,19968,20224,20480,20736,20992,21248,21504,21760,22016,22272,22528,22784,23040,23296,23552,24064,24320,24576,24832,25088,25600,26112)
+*******************************************
+select count(c.id) total from comic c,label l where c.status = '1' and l.comicId = c.id and l.name = '彩虹'
+*******************************************
+select c.* from comic c,label l  where c.status = '1' and l.comicId = c.id and l.name = '彩虹'  order by c.hits desc  limit 0,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (1240,3302,6902,7668,8045,8843,8857,9070,9644,11348,11836,11864,12162,12870,12897,12984,13266,13299,13534,13690,13691,13746,13761,13764,13859,13909,13926,14022,14030,14083,14096,14187,14227,14262,14272,14304,14363,14367,14388,14493,14497,14499,14503,14505,14520,14544,14555,14562,14589,14604,14638,14667,14673,14675,14706,14765,14774,14776,14868,14932,15023,15071,15074,15197,15216,15251,15271,15270,15288,15311) group by comicId;
+*******************************************
+select * from label where comicId in (1240,3302,6902,7668,8045,8843,8857,9070,9644,11348,11836,11864,12162,12870,12897,12984,13266,13299,13534,13690,13691,13746,13761,13764,13859,13909,13926,14022,14030,14083,14096,14187,14227,14262,14272,14304,14363,14367,14388,14493,14497,14499,14503,14505,14520,14544,14555,14562,14589,14604,14638,14667,14673,14675,14706,14765,14774,14776,14868,14932,15023,15071,15074,15197,15216,15251,15271,15270,15288,15311)
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id = 1240
+*******************************************
+select * from chapter where comicId = 1240
+*******************************************
+select * from comic where id in (5083,3505,9471,5536,5322)
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select * from comic where id = 1240
+*******************************************
+select * from chapter where comicId = 1240
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select * from comic where id in (525,1413,7313,1966,8266)
+*******************************************
+select * from comic where id = 2159
+*******************************************
+select * from comic where id in (7282,1481,3075,8900,9302)
+*******************************************
+select * from chapter where comicId = 2159
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id = 1240
+*******************************************
+select * from comic where id in (1144,6200,6523,3113,9312)
+*******************************************
+select * from chapter where comicId = 1240
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id = 2159
+*******************************************
+select * from chapter where comicId = 2159
+*******************************************
+select * from comic where id in (4060,8587,9026,5906,44)
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select count(id) total from comic
+*******************************************
+select * from comic   order by hits desc  limit 0,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056,13312,13568,13824,14080,14336,14592,14848,15104,15360,15616,15872,16128,16384,16640,16896,17152,17408,17664,17920,18176) group by comicId;
+*******************************************
+select * from label where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056,13312,13568,13824,14080,14336,14592,14848,15104,15360,15616,15872,16128,16384,16640,16896,17152,17408,17664,17920,18176)
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select * from comic where id = 1536
+*******************************************
+select * from comic where id in (3113,2848,6453,6344,2384)
+*******************************************
+select * from chapter where comicId = 1536
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id = 1536
+*******************************************
+select * from chapter where comicId = 1536
+*******************************************
+select AVG(score) score,comicId from score where comicId in (1536) group by comicId;
+*******************************************
+select * from comic where id in (4375,8643,1496,2610,6474)
+*******************************************
+select * from label where comicId in (1536)
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id in (283,503,8914,1332,2781)
+*******************************************
+select * from comic where id = 2159
+*******************************************
+select * from chapter where comicId = 2159
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2159) group by comicId;
+*******************************************
+select * from label where comicId in (2159)
+*******************************************
+select * from comic where id = 1536
+*******************************************
+select * from comic where id in (8066,8577,8668,9953,6522)
+*******************************************
+select * from chapter where comicId = 1536
+*******************************************
+select AVG(score) score,comicId from score where comicId in (1536) group by comicId;
+*******************************************
+select * from label where comicId in (1536)
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select count(id) total from comic
+*******************************************
+select * from comic   order by hits desc  limit 0,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056,13312,13568,13824,14080,14336,14592,14848,15104,15360,15616,15872,16128,16384,16640,16896,17152,17408,17664,17920,18176) group by comicId;
+*******************************************
+select * from label where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056,13312,13568,13824,14080,14336,14592,14848,15104,15360,15616,15872,16128,16384,16640,16896,17152,17408,17664,17920,18176)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,70
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689,699,710,709,718,717,721,723,722,726,728,739,741,742,749,770,841,853,862,861,864) group by comicId;
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689,699,710,709,718,717,721,723,722,726,728,739,741,742,749,770,841,853,862,861,864)
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id in (9556,6910,8330,2088,8751)
+*******************************************
+select * from comic where id = 281
+*******************************************
+select * from chapter where comicId = 281
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281) group by comicId;
+*******************************************
+select * from label where comicId in (281)
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select count(id) total from comic where status = '1'
+*******************************************
+select * from comic  where status = '1'  order by hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352) group by comicId;
+*******************************************
+select count(id) total from comic
+*******************************************
+select * from label where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352)
+*******************************************
+select * from comic   order by hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '彩虹'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '冒险'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select * from label where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '彩虹'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '冒险'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950) group by comicId;
+*******************************************
+select * from label where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906)
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689)
+*******************************************
+select * from label where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '同人'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '同人'  order by c.hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189) group by comicId;
+*******************************************
+select * from label where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '百合'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '搞笑'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '搞笑'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '百合'  order by c.hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240) group by comicId;
+*******************************************
+select * from label where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668)
+*******************************************
+select * from label where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117)
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select * from comic where id in (7750,7743,2596,8198,894)
+*******************************************
+select * from comic where id = 768
+*******************************************
+select * from chapter where comicId = 768
+*******************************************
+select AVG(score) score,comicId from score where comicId in (768) group by comicId;
+*******************************************
+select * from label where comicId in (768)
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select count(id) total from comic
+*******************************************
+select * from comic   order by hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056) group by comicId;
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from label where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056)
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '彩虹'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '彩虹'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '冒险'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550) group by comicId;
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '冒险'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '同人'
+*******************************************
+select * from label where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '同人'  order by c.hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950) group by comicId;
+*******************************************
+select * from label where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658)
+*******************************************
+select * from label where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189)
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '百合'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '搞笑'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '搞笑'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '百合'  order by c.hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117) group by comicId;
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668)
+*******************************************
+select * from label where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240)
+*******************************************
+select * from label where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117)
+*******************************************
+select * from comic  where status = '1'  order by hits desc  limit 0,11
+*******************************************
+select count(id) total from comic where status = '1'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352) group by comicId;
+*******************************************
+select * from label where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352)
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from comic   order by hits desc  limit 0,50
+*******************************************
+select count(id) total from comic
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '彩虹'
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '彩虹'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056) group by comicId;
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '冒险'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906) group by comicId;
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '冒险'  order by c.hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689) group by comicId;
+*******************************************
+select * from label where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658) group by comicId;
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689)
+*******************************************
+select * from label where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '同人'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950) group by comicId;
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '同人'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189) group by comicId;
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '百合'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '搞笑'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '百合'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '搞笑'  order by c.hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240) group by comicId;
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668)
+*******************************************
+select * from label where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117)
+*******************************************
+select * from label where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240)
+*******************************************
+select count(id) total from comic where status = '1'
+*******************************************
+select * from comic  where status = '1'  order by hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352) group by comicId;
+*******************************************
+select * from label where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352)
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select count(id) total from comic where status = '1'
+*******************************************
+select * from comic  where status = '1'  order by hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352) group by comicId;
+*******************************************
+select count(id) total from comic
+*******************************************
+select * from comic   order by hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '彩虹'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '冒险'
+*******************************************
+select * from label where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '彩虹'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '冒险'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689) group by comicId;
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906)
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550)
+*******************************************
+select * from label where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950) group by comicId;
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '同人'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '同人'  order by c.hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189) group by comicId;
+*******************************************
+select * from label where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '百合'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '搞笑'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '百合'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '搞笑'  order by c.hits desc  limit 0,50
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240) group by comicId;
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668)
+*******************************************
+select * from comic where id = 1536
+*******************************************
+select * from label where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117)
+*******************************************
+select * from label where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240)
+*******************************************
+select * from chapter where comicId = 1536
+*******************************************
+select AVG(score) score,comicId from score where comicId in (1536) group by comicId;
+*******************************************
+select * from comic where id in (1239,7402,4597,6814,9202)
+*******************************************
+select * from label where comicId in (1536)
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select count(id) total from comic
+*******************************************
+select * from comic   order by hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '彩虹'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '彩虹'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,50
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '冒险'
+*******************************************
+select * from label where comicId in (512,768,1024,1280,1536,1792,2048,2304,2560,2816,3072,3328,3584,3840,4096,4352,4608,4864,5120,5376,5632,5888,6144,6400,6656,6912,7168,7424,7680,7936,8192,8448,8704,8960,9216,9472,9728,9984,10240,10496,10752,11008,11264,11520,11776,12032,12288,12544,12800,13056)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '冒险'  order by c.hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658) group by comicId;
+*******************************************
+select * from label where comicId in (275,667,875,1240,1419,1848,2402,3302,5708,6375,6677,6902,7631,7668,7893,8045,8046,8843,8857,8966,9070,9644,11348,11519,11601,11683,11826,11836,11864,12033,12159,12162,12870,12897,12984,13266,13299,13534,13594,13690,13691,13694,13746,13761,13764,13765,13859,13874,13890,13906)
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294,292,297,302,306,307,311,315,317,321,324,339,350,367,372,376,377,379,392,393,396,398,402,405,407,409,416,434,436,438,450,464,471,506,511,513,518,528,540,550)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359,369,388,398,399,421,422,430,467,472,473,481,482,483,486,489,502,517,520,521,523,532,533,539,545,573,576,578,581,583,590,605,611,644,649,663,669,678,679,689)
+*******************************************
+select * from label where comicId in (330,421,485,539,578,583,590,595,615,649,663,862,884,929,977,981,991,1034,1076,1115,1124,1142,1167,1187,1216,1217,1253,1574,1579,1610,1613,1634,1686,1722,1948,2008,2072,2081,2082,2107,2117,2177,2181,2203,2220,2255,2304,2378,2581,2658)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '同人'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '同人'  order by c.hits desc  limit 0,50
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385,405,403,423,466,492,514,516,515,518,525,534,563,564,565,566,567,569,602,603,615,635,640,644,647,653,658,669,682,715,778,781,783,795,828,835,839,856,930,950)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '百合'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '搞笑'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select * from label where comicId in (2737,8118,8168,9523,10592,10923,12892,12898,12899,12902,12908,12920,12921,12933,12934,12946,12948,12953,12952,12963,12981,12994,13006,13052,13054,13055,13056,13057,13058,13070,13129,13132,13133,13159,13161,13167,13173,13174,13175,13176,13180,13179,13178,13181,13182,13183,13184,13185,13187,13189)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '搞笑'  order by c.hits desc  limit 0,50
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '百合'  order by c.hits desc  limit 0,50
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668) group by comicId;
+*******************************************
+select * from label where comicId in (2050,5893,5980,6342,6474,6640,7029,7395,7465,7548,7617,8051,8610,8613,8614,8881,9139,9140,9147,9148,9181,9619,9886,10135,10180,10206,10324,10400,10424,10446,10475,11016,11097,11193,11210,11212,11332,11409,11428,11446,11518,11588,11707,11734,11740,11742,11759,11791,12050,12117)
+*******************************************
+select * from label where comicId in (388,414,850,1541,2737,4637,5581,5624,5734,5866,5990,6097,6441,7397,7718,8282,8356,8699,8854,8891,10320,10733,10890,11601,11915,12118,12375,12703,12963,12987,12988,13009,13010,13011,13039,13114,13116,13149,13213,13224,13297,13618,13669,13677,13693,13786,13846,14043,14148,14240)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916,4159,4225,4421,4840,4870,4891,5066,5209,5243,5270,5387,5495,5527,5689,5829,5946,5950,6033,6081,6120,6130,6223,6343,6363,6538,6640,6649,6681,6709,6838,6868,6984,6986,7099,7190,7257,7446,7559,7668)
+*******************************************
+select count(id) total from comic where status = '1'
+*******************************************
+select * from comic  where status = '1'  order by hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352) group by comicId;
+*******************************************
+select * from label where comicId in (768,1024,1280,1536,1792,2304,2816,3328,3584,4096,4352)
+*******************************************
+select count(c.id) total from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id
+*******************************************
+select c.*,u.id userId,u.name userName,u.cover,date_format(c.time,"%Y-%m-%d %H:%i:%s") time,uu.id toUserId,uu.name toUserName,uu.cover toUserCover  from comment c,user u,user uu where isNull(c.parent) and c.userId = u.id and c.toUserId = uu.id limit 0,20
+*******************************************
+select * from comic where id in (2903,2649,1217,9455,5536)
+*******************************************
+select * from comic where id = 421
+*******************************************
+select AVG(score) score,comicId from score where comicId in (421) group by comicId;
+*******************************************
+select * from chapter where comicId = 421
+*******************************************
+select * from label where comicId in (421)
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select name,count(id) count from label group by name
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************
+select c.* from comic c,banner b where b.comicId = c.id order by b.num
+*******************************************
+select c.* from comic c,recommend b where b.comicId = c.id order by b.num limit 0,6
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '热血'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '热血'  order by c.hits desc  limit 0,11
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '恋爱'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '恋爱'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288,282,289,290,291) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '校园'
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,284,285,286,287,288) group by comicId;
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '校园'  order by c.hits desc  limit 0,11
+*******************************************
+select AVG(score) score,comicId from score where comicId in (281,290,298,318,322,330,331,334,353,356,359) group by comicId;
+*******************************************
+select AVG(score) score,comicId from score where comicId in (277,276,278,280,283,282,287,288,289,291,294) group by comicId;
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288,282,289,290,291)
+*******************************************
+select * from label where comicId in (281,284,285,286,287,288)
+*******************************************
+select * from label where comicId in (281,290,298,318,322,330,331,334,353,356,359)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916) group by comicId;
+*******************************************
+select * from label where comicId in (277,276,278,280,283,282,287,288,289,291,294)
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '奇幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '奇幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (706,866,991,1615,1774,1956,2101,3197,3303,3713,3916)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970) group by comicId;
+*******************************************
+select count(c.id) total from comic c,label l where l.comicId = c.id and l.name = '科幻'
+*******************************************
+select c.* from comic c,label l  where l.comicId = c.id and l.name = '科幻'  order by c.hits desc  limit 0,11
+*******************************************
+select * from label where comicId in (2766,4488,4915,5708,6040,9720,10512,10870,10894,10904,10970)
+*******************************************
+select AVG(score) score,comicId from score where comicId in (279,284,285,286,293,300,310,316,329,360,385) group by comicId;
+*******************************************
+select * from label where comicId in (279,284,285,286,293,300,310,316,329,360,385)
+*******************************************

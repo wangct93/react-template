@@ -1,0 +1,85 @@
+@import "../../less/common";
+
+.comic_item{
+  position: relative;
+  width: 0;
+  flex:1;
+  margin-right: 10px;
+  font-size: 12px;
+  line-height: 20px;
+  &:last-child{
+    margin-right: 0;
+  }
+  .line_name{
+    display: flex;
+    align-items: center;
+  }
+  .text_name{
+    flex:1;
+    font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+  }
+  .text_time{
+    color: #666!important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .text_intro{
+    min-height: 40px;
+  }
+
+  .hover_item{
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    opacity: 0;
+    -webkit-transform: scale(.73);
+    transform: scale(.73);
+    transition: all .3s;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    z-index: 2;
+    width: 226px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+    :global{
+      .img-box{
+        overflow: hidden;
+        height: 160px;
+        cursor: pointer;
+        img{
+          height: auto;
+        }
+      }
+      .ant-btn-primary{
+        width: 100%;
+        margin-top: 5px;
+      }
+    }
+
+    .newly_bottom{
+      padding: 10px;
+    }
+  }
+
+  &:hover{
+    .hover_item{
+      opacity: 1;
+      transform:scale(1)
+    }
+  }
+
+  :global{
+    .img-box{
+      height: 220px;
+    }
+  }
+}

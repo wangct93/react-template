@@ -1,0 +1,98 @@
+@import "../../less/common";
+@color:#252525;
+.header{
+  border:1px solid #f3f3f3;
+  background-color: #fff;
+  position:fixed;
+  width: 100%;
+  top: 0;
+  left:0;
+  z-index:100;
+  :global{
+    .fixed-width{
+      height: @headerHeight;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.logo{
+  margin-right: 30px;
+  img{
+    width: 108px;
+    height: 32px;
+  }
+}
+
+.nav_list{
+  display: flex;
+  .nav_item{
+    width: 58px;
+    text-align: center;
+    > a{
+      font-size:18px;
+      color:@color;
+      &:hover,&:global(.active){
+        color: @activeColor;
+      }
+    }
+  }
+}
+
+.search_box{
+  width: 402px;
+  margin-left: 20px;
+  :global{
+    .ant-input{
+      border-bottom-left-radius: 20px;
+      border-top-left-radius: 20px;
+      border:2px solid @activeColor !important;
+      padding-left: 20px;
+      &:focus{
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    .ant-input-group-addon{
+      width: 108px;
+    }
+    .ant-input-search-button{
+      background-color: @activeColor;
+      border-color: @activeColor;
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+      .anticon{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.tool_list{
+  display: flex;
+  margin-left: 96px;
+  > li{
+    min-width: 42px;
+    text-align: center;
+    cursor: pointer;
+    font-size:12px;
+    &:hover{
+      color:@activeColor;
+    }
+    .tool_text{
+      margin-top: 3px;
+    }
+    :global{
+      .anticon{
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.user_wrap{
+  flex:1;
+  overflow: hidden;
+  text-align: right;
+}
