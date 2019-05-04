@@ -6,6 +6,6 @@ module.exports = {
   host:'cdb-j5if1ill.gz.tencentcdb.com',
   port:'10068',
   user:'root',
-  password:'password3',
+  password:'wct3303@',
   database:'manhua'
 };
