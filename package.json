@@ -9,7 +9,6 @@
     "server": "node server",
     "build": "roadhog build",
     "lint": "eslint --ext .js src test",
-    "precommit": "npm run lint",
     "crawler": "node server/webCrawler/1kkk",
     "crawlerImg": "node server/webCrawler/1kkk_img"
   },

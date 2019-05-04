@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/server/config/mysql.js
+server/config/mysql.js
 
 # production
 /dist
