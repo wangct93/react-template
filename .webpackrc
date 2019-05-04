@@ -8,7 +8,10 @@
     },
    "/user":{
      "target":"http://localhost:6789"
-   }
+   },
+   "/comment":{
+      "target":"http://localhost:6789"
+    }
   },
   "extraBabelPlugins": [
     ["import", { "libraryName": "antd", "libraryDirectory": "es" }]

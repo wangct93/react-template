@@ -53,7 +53,7 @@ export default class Comic extends PureComponent {
           <div className={css.left}>
             <ChapterView />
             <CorrelativeBox />
-            <Comment />
+            <Comment id={this.getComicId()} />
           </div>
           <div className={css.right}>
             <AuthorInfo />
@@ -161,7 +161,7 @@ class ChapterList extends PureComponent{
       <FlexLines limit={3}>
         {
           list.map((item,index) => {
-            return <div key={item.id} className={css.chapter_item}>
+            return <div key={item.id} className={css.chapter_item} onClick={toChapter.bind(this,item)}>
               <span className={css.text_name}>{item.name}</span>
               <span className={css.text_intro}>{item.intro}</span>
             </div>

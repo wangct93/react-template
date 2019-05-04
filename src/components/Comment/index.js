@@ -5,9 +5,9 @@ import React, {PureComponent} from 'react';
 import {connect} from 'dva';
 import util, {reactUtil,arrayUtil,objectUtil} from 'wangct-util';
 import {Input,Button,Pagination,Modal} from 'antd';
-import Text from '@lib/Text';
+import {Img,Text} from '@lib';
 import css from './index.less';
-import {queryCommentList,submitComment} from '../../services/api';
+import {queryList,submit as submitComment} from '../../services/comment';
 
 const {getProps} = reactUtil;
 const dispatch = reactUtil.getDispatch('comment');
@@ -51,15 +51,23 @@ export default class Comment extends PureComponent {
     }
   }
 
+  fitView(){
+    if(this.containerElem){
+      const scrollElem = document.documentElement;
+      scrollElem.scrollTop = scrollElem.scrollTop + this.containerElem.getBoundingClientRect().top - 86;
+    }
+  }
+
   queryList = () => {
     this.setState({
       loading:true
     });
+    this.fitView();
     const params = this.getParams();
-    queryCommentList(params).then(({data = {}}) => {
-      const {total,list:queryList} = data;
+    queryList(params).then(({data = {}}) => {
+      const {total,list:result} = data;
       const {list} = getProps(this);
-      queryList.forEach((item,i) => {
+      result.forEach((item,i) => {
         list[params.start + i] = item;
       });
       this.setState({
@@ -76,11 +84,12 @@ export default class Comment extends PureComponent {
     return {
       start,
       limit:props.pageSize,
-      parent:props.id
+      rootId:props.id
     }
   }
 
   pageChange = (pageNum,pageSize) => {
+    this.fitView();
     this.setState({
       pageNum,
       pageSize
@@ -89,9 +98,31 @@ export default class Comment extends PureComponent {
     })
   };
 
+  doSubmit = (keyword,cb) => {
+    submitComment({
+      content:keyword,
+      rootId:this.props.id,
+      type:'comic'
+    }).then(json => {
+      if(json.success){
+        this.queryList();
+      }
+      util.callFunc(cb,json);
+    })
+  };
+
+  refresh = () => {
+    this.setState({
+      pageNum:1
+    },() => {
+      this.queryList()
+    });
+  };
+
   render() {
     const props = getProps(this);
-    return <div className={css.container}>
+    const {state} = this;
+    return <div className={css.container} ref={ref => this.containerElem = ref}>
       <div className={css.header}>
         <div className={css.header_left}>
           <span className={util.classNames(css.tabs_item,'active')}>全部评论</span>
@@ -102,17 +133,19 @@ export default class Comment extends PureComponent {
         <Pagination current={props.pageNum} pageSize={props.pageSize} total={props.total} onChange={this.pageChange} />
       </div>
       <div className={css.body}>
-        <MyInput />
+        <MyInput submit={this.doSubmit} />
         <ul className={css.comment_list}>
           {
             this.getList().map(item => {
               return <li key={item.id}>
-                <Item queryList={this.queryList} mode={props.mode} data={item}/>
+                <Item refresh={this.refresh} rootId={props.id} queryList={this.queryList} mode={props.mode} data={item}/>
               </li>
             })
           }
         </ul>
-        <MyInput />
+        {
+          state.total ? <MyInput submit={this.doSubmit} /> : ''
+        }
       </div>
 
       <div className={css.footer}>
@@ -125,25 +158,19 @@ export default class Comment extends PureComponent {
 @connect(({comment}) => ({activeId:comment.activeId}))
 class Item extends PureComponent{
   state = {
-    // showReply:true,
-    // showInput:true
+
   };
 
-  inputChange = (e) => {
-      this.setState({
-        message:e.target.value
-      })
-  };
-
-  submit = () => {
-    const {message,data,userInfo} = getProps(this);
+  submit = (keyword) => {
+    const {data} = getProps(this);
+    const {props} = this;
+    const userInfo = {id:1};
     if(userInfo){
-      const isReply = this.isReply();
       submitComment({
-        parent:isReply ? data.parent : data.id,
-        to:isReply ? data.id : undefined,
-        content:message,
-        type:'reply',
+        parent:data.parent ? data.parent + ',' + data.id : data.id,
+        rootId:props.rootId,
+        content:keyword,
+        type:'comic',
         toUserId:data.userId
       }).then(json => {
         if(json.success){
@@ -151,15 +178,8 @@ class Item extends PureComponent{
             title:'成功提示',
             content:'提交成功！'
           });
-          this.setState({
-            showInput:false,
-            message:''
-          });
-          if(isReply){
-            util.callFunc(this.props.queryList);
-          }else if(this.childTarget){
-            util.callFunc(this.childTarget.queryList);
-          }
+          this.activeChange();
+          util.callFunc(this.props.refresh);
         }else{
           Modal.error({
             title:'失败提示',
@@ -176,12 +196,6 @@ class Item extends PureComponent{
     }
   };
 
-  showReply = () => {
-    this.setState({
-      showReply:!getProps(this).showReply
-    });
-  };
-
   showInput = () => {
     this.setState({
       showInput:!getProps(this).showInput
@@ -193,9 +207,6 @@ class Item extends PureComponent{
     return getProps(this).mode === 'reply';
   }
 
-  imgError = (e) => {
-    e.target.src = NORMALUSERCOVER;
-  };
 
   isActive(){
     return this.props.activeId === this.getData().id;
@@ -221,14 +232,22 @@ class Item extends PureComponent{
     const isActive = this.isActive();
     return <div className={css.comment_item}>
       <div className="img-box">
-        <img alt="error" onError={this.imgError} src={data.cover || NORMALUSERCOVER} />
+        <Img src={data.cover || NORMALUSERCOVER} />
       </div>
       <div className={util.classNames('wct-flex',css.info_box)}>
         <div className={css.title}>
           <span className={css.text_title}>{data.userName}</span>
         </div>
         {
-          data.children && <ul className={css.child_list}>123</ul>
+          data.children && <ul className={util.classNames(css.comment_list,css.child_list)}>
+            {
+              data.children.map(item => {
+                return <li key={item.id}>
+                  <Item {...props} data={item}/>
+                </li>
+              })
+            }
+          </ul>
         }
         <div className={css.text_content}>{data.content}</div>
         <div className={css.bottom}>
@@ -251,9 +270,11 @@ class InputBox extends PureComponent{
   };
 
   onChange = (e) => {
+    const value = e.target.value;
     this.setState({
-      value:e.target.value
-    })
+      value
+    });
+    util.callFunc(this.props.onChange,value);
   };
 
   submit = () => {
@@ -261,11 +282,15 @@ class InputBox extends PureComponent{
     util.callFunc(this.props.onSubmit,value);
   };
 
+  getValue(){
+    return getProps(this).value
+  }
+
   render(){
     const {state,props} = this;
     return <div className={css.input_wrap}>
       <div className={css.input_box}>
-        <Input.TextArea placeholder={props.placeholder} value={state.value} onChange={this.onChange}/>
+        <Input.TextArea placeholder={props.placeholder} value={this.getValue()} onChange={this.onChange}/>
       </div>
       <div className={css.input_bottom}>
         <span className={css.text_tips}>请您文明上网，理性发言，注意文明用语</span>
@@ -278,21 +303,34 @@ class InputBox extends PureComponent{
 
 class MyInput extends PureComponent{
   state = {
-
+    inputValue:''
   };
 
-  submit = (v) => {
-    console.log(v)
+  submit = (keyword) => {
+    util.callFunc(this.props.submit,keyword,(json) => {
+      if(json.success){
+        this.setState({
+          inputValue:''
+        })
+      }
+    })
   };
+
+  inputValueChange = (value) => {
+    this.setState({
+      inputValue:value
+    })
+  }
 
   render(){
-    const {data = {}} = this.props;
+    const {props,state} = this;
+    const {data = {}} = props;
     return <div className={util.classNames(css.comment_item,css.my_input_wrap)}>
       <div className="img-box">
-        <img alt="error" onError={this.imgError} src={data.cover || NORMALUSERCOVER} />
+        <Img src={data.cover || NORMALUSERCOVER} />
       </div>
       <div className={util.classNames('wct-flex',css.info_box)}>
-        <InputBox onSubmit={this.submit} placeholder="我来说两句..." isComment />
+        <InputBox value={state.inputValue} onChange={this.inputValueChange} onSubmit={this.submit} placeholder="我来说两句..." isComment />
       </div>
     </div>
   }

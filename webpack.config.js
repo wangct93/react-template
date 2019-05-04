@@ -13,5 +13,7 @@ module.exports = (config, env) => {
     '@lib':resolve('src/components'),
     '@':resolve('src')
   };
+  console.log(config.plugins);
+  // require('fs').writeFileSync('a.json',JSON.stringify(config.module.rules.map(item => ({...item,test:item.test && item.test.toString()}))),() => {});
   return config
 };

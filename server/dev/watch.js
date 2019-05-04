@@ -100,10 +100,6 @@ function babelConfig(cb){
   new Babel({
     src:'src/config',
     output,
-    option:{
-      presets: ['react','env','stage-0'],
-      plugins: ["transform-decorators-legacy"]
-    },
     success(){
       Object.keys(require.cache).forEach(key => {
         if(key.includes(output)){
@@ -157,10 +153,6 @@ function updateComponent(){
   new Babel({
     src:componentConfigPath,
     output,
-    option:{
-      presets: ['react','env','stage-0'],
-      plugins: ["transform-decorators-legacy"]
-    },
     success(){
       Object.keys(require.cache).forEach(key => {
         if(key.includes(output)){

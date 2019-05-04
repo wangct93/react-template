@@ -7,6 +7,9 @@ const mysql = new Mysql(config);
 const util = require('wangct-server-util');
 const {arrayUtil,dateUtil} = util;
 
+const manhuaUtils = require('../webCrawler/1kkk_utils');
+
+
 module.exports = {
   queryList,
   queryCommentList,
@@ -14,7 +17,8 @@ module.exports = {
   queryCorrelativeList,
   queryLabelList,
   queryBannerList,
-  queryRecommendList
+  queryRecommendList,
+  queryChapterInfo
 };
 
 
@@ -229,4 +233,42 @@ function addComicScore(list = [],cb){
   }else{
     cb(list);
   }
+}
+
+function queryChapterInfo(id,cb){
+  mysql.query(`select * from chapter where id = ${id}`,(err,data) => {
+    if(err){
+      cb(err);
+    }else if(data[0]){
+      manhuaUtils.queryImages(data[0].id,(list = []) => {
+        cb(null,{
+          ...data[0],
+          list:list.map(item => `/file/getComicImage?url=${encodeURIComponent(item)}&Referer=${`http://www.1kkk.com${data[0].url}`}`)
+        })
+      })
+    }else{
+      cb(null,{});
+    }
+  });
+
+
+  // const infoPro = new Promise((cb,eb) => {
+  //
+  // });
+  // const listPro = new Promise((cb,eb) => {
+  //   // mysql.query(`select * from image where parent = ${id}`,(err,data) => {
+  //   //   err ? eb(err) : cb(data);
+  //   // });
+  //
+  //   manhuaUtils.queryImages(id)
+  //
+  // });
+  //
+  // Promise.all([infoPro,listPro]).then(result => {
+  //   cb(null,{
+  //     ...result[0],
+  //     list:result[1]
+  //   })
+  // },cb)
+
 }

@@ -9,8 +9,8 @@ export default [
     component:'List'
   },
   {
-    path:'/test',
-    component:'Test'
+    path:'/chapter/:id',
+    component:'Chapter'
   },
   {
     path:'/',

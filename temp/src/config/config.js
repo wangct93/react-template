@@ -1,18 +1,19 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports["default"] = void 0;
 
-var _router = require('./router');
+var _router = _interopRequireDefault(require("./router"));
 
-var _router2 = _interopRequireDefault(_router);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  routes: _router2.default,
+/**
+ * Created by wangct on 2019/2/1.
+ */
+var _default = {
+  routes: _router["default"],
   dynamicImport: true
-}; /**
-    * Created by wangct on 2019/2/1.
-    */
+};
+exports["default"] = _default;

@@ -69,3 +69,9 @@ router.post('/queryRecommendList',(req,res) => {
     util.send(res,data,err);
   });
 });
+
+router.post('/queryChapterInfo',(req,res) => {
+  mysql.queryChapterInfo(req.body.id,(err,data) => {
+    util.send(res,data,err);
+  })
+});

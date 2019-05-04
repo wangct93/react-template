@@ -96,3 +96,10 @@ export function queryRecommendList(params){
     body:params
   });
 }
+
+export function queryChapterInfo(params){
+  return request('/api/queryChapterInfo',{
+    method:'post',
+    body:params
+  });
+}

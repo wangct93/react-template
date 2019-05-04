@@ -8,6 +8,8 @@ const fs = require('fs');
 const path = require('path');
 const resolve = (...paths) => path.resolve(process.cwd(),...paths);
 const config = require('../config/server');
+const request = require('request');
+const url = require('url');
 
 module.exports = router;
 
@@ -51,4 +53,19 @@ router.get('/getImage',(req,res) => {
 router.get('/getNormalUserCover',(req,res) => {
   const rs = fs.createReadStream(resolve('assets/normal/user.jpg'));
   rs.pipe(res);
+});
+
+router.use('/getComicImage',(req,res) => {
+  const {query:{url:realUrl,Referer}} = req;
+  const urlOpt = url.parse(realUrl);
+  const address = `${urlOpt.protocol}//${urlOpt.host}${urlOpt.pathname.split(/[\\\/]/).map(item => encodeURIComponent(item)).join('/')}${urlOpt.search}`;
+  const rs = request(address,{
+    headers:{
+      Referer:Referer
+    }
+  });
+  rs.pipe(res);
+  rs.on('error',() => {
+    res.send('error');
+  })
 });
