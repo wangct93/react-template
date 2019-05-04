@@ -1,0 +1,14 @@
+{"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlMessage":"Unknown column 'undefined' in 'field list'","sqlState":"42S22","index":0,"sql":"insert into comment(userId,content,parent,type,time,toId,rootId) values(userId='1',content='哈哈',parent=undefined,type='comic',time='2019-05-03 18:09:55',toId=undefined,rootId='293')"}
+*******************************************
+{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''comic','2019-05-03 18:12:45',,'293')' at line 1","sqlState":"42000","index":0,"sql":"insert into comment(userId,content,parent,type,time,toId,rootId) values('1','哈哈',,'comic','2019-05-03 18:12:45',,'293')"}
+*******************************************
+{"code":"ER_BAD_NULL_ERROR","errno":1048,"sqlMessage":"Column 'content' cannot be null","sqlState":"23000","index":0,"sql":"insert into comment(userId,content,parent,type,time,toId,rootId) values('1',null,'36','comic','2019-05-03 18:23:19',null,'293')"}
+*******************************************
+{"code":"ER_NON_UNIQ_ERROR","errno":1052,"sqlMessage":"Column 'time' in field list is ambiguous","sqlState":"23000","index":0,"sql":"select c.*,u.cover,u.name userName,date_format(time,\"%Y-%m-%d %H:%i:%s\") time from comment c,user u where c.rootId = '293' and u.id = c.userId  order by time desc"}
+*******************************************
+{"code":"ER_NON_UNIQ_ERROR","errno":1052,"sqlMessage":"Column 'time' in field list is ambiguous","sqlState":"23000","index":0,"sql":"select c.*,u.cover,u.name userName,date_format(time,\"%Y-%m-%d %H:%i:%s\") time from comment c,user u where id in (43,42,40,36) and u.id = c.userId"}
+*******************************************
+{"code":"ER_NON_UNIQ_ERROR","errno":1052,"sqlMessage":"Column 'id' in where clause is ambiguous","sqlState":"23000","index":0,"sql":"select c.*,u.cover,u.name userName,date_format(c.time,\"%Y-%m-%d %H:%i:%s\") time from comment c,user u where id in (43,42,40,36) and u.id = c.userId"}
+*******************************************
+{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and u.id = c.userId' at line 1","sqlState":"42000","index":0,"sql":"select c.*,u.cover,u.name userName,date_format(c.time,\"%Y-%m-%d %H:%i:%s\") time from comment c,user u where c.id in () and u.id = c.userId"}
+*******************************************
