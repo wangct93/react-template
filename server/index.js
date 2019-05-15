@@ -41,5 +41,5 @@ routerList.forEach(routerName => {
 });
 
 app.use((req,res) => {
-  res.sendFile(resolve('dist/index.html'));
+  res.sendFile(resolve(config.html));
 });

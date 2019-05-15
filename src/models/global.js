@@ -3,7 +3,7 @@ import {reactUtil} from 'wangct-util';
 export default {
   namespace: 'global',
   state: {
-    title:'王垂通的个人博客'
+    pathname:window.location.pathname
   },
 
   effects: {
@@ -29,8 +29,6 @@ export default {
   },
   subscriptions: {
     setup({ history,dispatch}) {
-      reactUtil.setHistory(history);
-      reactUtil.setDispatch(dispatch);
       history.listen((match) => {
         dispatch({
           type:'updateField',
