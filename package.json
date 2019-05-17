@@ -16,7 +16,7 @@
     "express-session": "^1.16.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "wangct-dva": "^1.0.22",
+    "wangct-dva": "^1.0.23",
     "wangct-mysql": "^1.0.5",
     "wangct-react": "^1.0.7",
     "wangct-server-util": "^1.0.17",
