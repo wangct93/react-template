@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import util, {reactUtil} from 'wangct-util';
 
-import css from './Test.less';
+import css from './index.less';
 
 const dispatch = reactUtil.getDispatch('global');
 const history = reactUtil.getHistory();
