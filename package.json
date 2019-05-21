@@ -6,7 +6,8 @@
   "scripts": {
     "start": "wangct-dva",
     "server": "node server",
-    "build": "roadhog build"
+    "build": "wangct-dva build",
+    "publish": "npm pu --registry https://registry.npmjs.org/"
   },
   "dependencies": {
     "antd": "^3.17.0",
@@ -16,10 +17,10 @@
     "express-session": "^1.16.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "wangct-dva": "^1.0.23",
+    "wangct-dva": "^1.0.24",
     "wangct-mysql": "^1.0.5",
     "wangct-react": "^1.0.7",
     "wangct-server-util": "^1.0.17",
-    "wangct-util": "^1.0.21"
+    "wangct-util": "^1.0.23"
   }
 }
