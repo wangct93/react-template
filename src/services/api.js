@@ -1,10 +1,10 @@
-import {request} from 'wangct-dva';
+import request from './request';
 
 
 
 
-export function queryComicList(params){
-  return request('/api/queryComicList',{
+export function test(params){
+  return request('/api/test',{
     method:'post',
     body:params
   });

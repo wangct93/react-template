@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "wangct-dva",
+    "start": "wangct-webpack",
     "server": "node server",
-    "build": "wangct-dva build",
+    "build": "wangct-webpack build",
     "publish": "npm pu --registry https://registry.npmjs.org/"
   },
   "dependencies": {
@@ -15,12 +15,18 @@
     "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
+    "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "wangct-dva": "^1.0.24",
-    "wangct-mysql": "^1.0.5",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "wangct-mysql": "^1.0.6",
     "wangct-react": "^1.0.7",
-    "wangct-server-util": "^1.0.17",
-    "wangct-util": "^1.0.23"
+    "wangct-server-util": "^1.0.20",
+    "wangct-util": "^1.0.25"
+  },
+  "devDependencies": {
+    "wangct-webpack": "^1.0.0"
   }
 }

@@ -3,6 +3,6 @@
 module.exports = [
   {
     path:'/',
-    component:'Test'
+    component:'Layout'
   }
 ];

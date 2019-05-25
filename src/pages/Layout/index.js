@@ -7,7 +7,7 @@ const dispatch = reactUtil.getDispatch('global');
 const history = reactUtil.getHistory();
 const {getProps} = reactUtil;
 
-export default class Test extends PureComponent {
+export default class Layout extends PureComponent {
   render() {
     return <div className={css.container}>
 hello world!
