@@ -1,5 +1,5 @@
-import fetch from 'dva/fetch';
 import util from 'wangct-util';
+const {fetch} = window;
 
 function parseJSON(response) {
   return response.json();
@@ -30,13 +30,7 @@ export default function request(url, options = {}) {
     .then(parseJSON)
     .catch(() => ({success:false,message:'连接服务器失败！'}))
     .then(json => {
-      return new Promise((cb,eb) => {
-        if(json.success){
-          cb(json);
-        }else{
-          eb(json);
-        }
-      })
+      return json.success ? Promise.resolve(json.data) : Promise.reject(json.message);
     });
 }
 
@@ -54,5 +48,6 @@ function formatOptions(options){
 }
 
 function addToken(url){
-  return url + (url.includes('?') ? '&' : '?') + 'token=' + util.cookie()['wangct_token'];
+  const token = util.cookie('wangct_token');
+  return token ? url + (url.includes('?') ? '&' : '?') + 'token=' + token : url;
 }
