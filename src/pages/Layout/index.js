@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import util, {reactUtil} from 'wangct-util';
+import {Header} from '@lib';
 
 import css from './index.less';
 
@@ -10,7 +11,12 @@ const {getProps} = reactUtil;
 export default class Layout extends PureComponent {
   render() {
     return <div className={css.container}>
-hello world!
+      <Header />
+      <div className={css.body}>
+        {
+          this.props.children
+        }
+      </div>
     </div>
   }
 }

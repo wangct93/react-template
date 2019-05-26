@@ -28,7 +28,7 @@ export default function request(url, options = {}) {
   return fetch(url, newOptions)
     .then(checkStatus)
     .then(parseJSON)
-    .catch(() => ({success:false,message:'连接服务器失败！'}))
+    .catch((data) => ({success:false,message:data && data.message || '连接服务器失败！'}))
     .then(json => {
       return json.success ? Promise.resolve(json.data) : Promise.reject(json.message);
     });

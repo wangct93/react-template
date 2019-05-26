@@ -3,7 +3,8 @@ import {reactUtil} from 'wangct-util';
 export default {
   namespace: 'global',
   state: {
-    pathname:window.location.pathname
+    pathname:window.location.pathname,
+    history:reactUtil.getHistory()
   },
 
   effects: {

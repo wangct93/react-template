@@ -3,8 +3,8 @@ import request from './request';
 
 
 
-export function test(params){
-  return request('/api/test',{
+export function createProject(params){
+  return request('/api/createProject',{
     method:'post',
     body:params
   });
