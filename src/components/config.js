@@ -1,5 +1,6 @@
 
-export default {
+
+module.exports = {
   components:[
     'Header'
   ]

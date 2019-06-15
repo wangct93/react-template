@@ -1,10 +1,19 @@
+
 const util = require('wangct-server-util');
-const routes = require('./routes');
+
+const {resolve} = util;
 
 module.exports = {
-  entry:{
-    main:util.resolve('src/index')
+  // entry:resolve('src'),
+  routes:[
+    {
+      path:'/',
+      component:'Layout'
+    },
+  ],
+  proxy:{
+    '/api':'http://localhost:8055'
   },
-  routes,
-  dynamicImport:true
+  dynamicImport:true,
+  eslint:true
 };

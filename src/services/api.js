@@ -1,11 +1,9 @@
-import request from './request';
+import {request} from 'wangct-dva';
 
 
-
-
-export function createProject(params){
-  return request('/api/createProject',{
+export function doTest(params){
+  return request('/authority/user/login',{
     method:'post',
     body:params
-  });
+  })
 }

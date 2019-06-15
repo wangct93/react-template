@@ -1,7 +1,7 @@
 import {createStore} from "redux";
 import util, {arrayUtil,reactUtil} from "wangct-util";
-import history from './history';
 import models from '../config/models';
+import history from './history';
 
 export default getStore(models);
 
