@@ -1,13 +1,19 @@
+import {reactUtil} from 'wangct-util';
+
+
+const {location} = window;
 
 export default {
   namespace: 'global',
   state: {
+    pathname:location.pathname,
+    location,
+    history:reactUtil.getHistory()
   },
 
   effects: {
-    *updateTest({ payload }, { call, put }) {  // eslint-disable-line
-      const t = yield put({ type: 'updateField' ,field:'w',data:'wangct'});
-
+    *fetch({ payload }, { call, put }) {  // eslint-disable-line
+      yield put({ type: 'save' });
     },
   },
 
@@ -28,16 +34,14 @@ export default {
   },
   subscriptions: {
     setup({ history,dispatch}) {
-      dispatch({
-        type:'updateField',
-        field:'pathname',
-        data:window.location.pathname
-      });
       history.listen((match) => {
         dispatch({
           type:'updateField',
-          field:'pathname',
-          data:match.pathname
+          field:'multiple',
+          data:{
+            pathname:match.pathname,
+            location:match
+          }
         });
       });
     }

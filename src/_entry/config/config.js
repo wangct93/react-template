@@ -1,1 +1,0 @@
-export default {"routes":[{"path":"/","component":"Test"}],"proxy":{"/api":"http://localhost:8055"},"dynamicImport":true,"eslint":true}

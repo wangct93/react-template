@@ -1,19 +1,30 @@
-
 const util = require('wangct-server-util');
+const serverConfig = require('../server/config/server');
 
 const {resolve} = util;
 
 module.exports = {
-  // entry:resolve('src'),
+  output:{
+    build:{
+      publicPath:'/assets/'
+    }
+  },
   routes:[
     {
       path:'/',
       component:'Layout'
-    },
+    }
+  ],
+  dynamicImport:true,
+  disableCssModules:[
+    resolve('node_modules/wangct-react')
   ],
   proxy:{
-    '/api':'http://localhost:8055'
-  },
-  dynamicImport:true,
-  eslint:true
+    '/api/':getProxyAddress()
+  }
 };
+
+
+function getProxyAddress(){
+  return `http://${util.getLocalIp()}:${serverConfig.port}`
+}

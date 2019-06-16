@@ -24,9 +24,7 @@
     "wangct-mysql": "^1.0.6",
     "wangct-react": "^1.0.7",
     "wangct-server-util": "^1.0.20",
-    "wangct-util": "^1.0.25"
-  },
-  "devDependencies": {
-    "wangct-webpack": "^1.0.0"
+    "wangct-util": "^1.0.25",
+    "wangct-webpack": "^1.0.6"
   }
 }
