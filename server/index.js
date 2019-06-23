@@ -34,11 +34,15 @@ app.listen(port,'0.0.0.0',() => {
 });
 
 const routerList = fs.readdirSync('server/router');
+const apiRouter = express.Router();
 routerList.forEach(routerName => {
   const router = require('./router/' + routerName);
   const pathName = router.pathName || path.basename(routerName,path.extname(routerName));
   app.use('/' + pathName,router);
+  apiRouter.use('/' + pathName,router);
 });
+
+app.use('/api',apiRouter);
 
 app.use((req,res) => {
   res.sendFile(resolve(config.html));
