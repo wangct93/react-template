@@ -5,5 +5,6 @@
 module.exports = {
   port:6789,
   html:'dist/index.html',
-  assets:['dist']
+  assets:['dist'],
+  assetsPaths:['assets']
 };

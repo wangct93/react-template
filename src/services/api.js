@@ -1,8 +1,11 @@
-import {request} from 'wangct-dva';
+import request from '../_entry/modules/request';
 
+function requestApi(url,options){
+  return request('/api' + url,options);
+}
 
 export function doTest(params){
-  return request('/authority/user/login',{
+  return requestApi('/test',{
     method:'post',
     body:params
   })

@@ -1,4 +1,4 @@
-import util from 'wangct-util';
+import {message} from 'antd';
 const {fetch} = window;
 
 function parseJSON(response) {
@@ -6,8 +6,16 @@ function parseJSON(response) {
 }
 
 function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
+  const {status} = response;
+  if (status >= 200 && status < 300) {
     return response;
+  }
+  if(status === 555){
+    response.json().then(data => {
+      const {location} = window;
+      location.href = data.data.location + '/login?goto=' + encodeURIComponent(location.href);
+    });
+    throw new Error('无权限访问');
   }
 
   const error = new Error(response.statusText);
@@ -20,17 +28,22 @@ function checkStatus(response) {
  *
  * @param  {string} url       The URL we want to request
  * @param  {object} [options] The options we want to pass to "fetch"
+ * @param  {object} [alertError] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-export default function request(url, options = {}) {
+export default function request(url, options = {},alertError = true) {
   const newOptions = formatOptions(options);
-  url = addToken(url);
   return fetch(url, newOptions)
     .then(checkStatus)
     .then(parseJSON)
-    .catch((data) => ({success:false,message:data && data.message || '连接服务器失败！'}))
+    .catch((error) => {
+      return {success:false,message:error && error.message || '连接服务器失败！'};
+    })
     .then(json => {
-      return json.success ? Promise.resolve(json.data) : Promise.reject(json.message);
+      if(!json.success && alertError){
+        message.error(json.message);
+      }
+      return json.success ? Promise.resolve(json.data) : Promise.reject(message);
     });
 }
 
@@ -45,9 +58,4 @@ function formatOptions(options){
     }
   }
   return options;
-}
-
-function addToken(url){
-  const token = util.cookie('wangct_token');
-  return token ? url + (url.includes('?') ? '&' : '?') + 'token=' + token : url;
 }
