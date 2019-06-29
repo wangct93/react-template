@@ -36,15 +36,20 @@ export default function request(url, options = {},alertError = true) {
   return fetch(url, newOptions)
     .then(checkStatus)
     .then(parseJSON)
-    .catch((error) => {
-      return {success:false,message:error && error.message || '连接服务器失败！'};
+    .catch((error = {}) => {
+      const message = error.message ? error.message : error;
+      return {code:error.code || 500,message:message || '连接服务器失败！'};
     })
     .then(json => {
-      if(!json.success && alertError){
+      if(isSuccess(json) && alertError){
         message.error(json.message);
       }
-      return json.success ? Promise.resolve(json.data) : Promise.reject(message);
+      return isSuccess(json) ? Promise.resolve(json.data) : Promise.reject(json);
     });
+}
+
+function isSuccess(data){
+  return data.code === 0;
 }
 
 

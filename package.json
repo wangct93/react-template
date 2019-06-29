@@ -19,8 +19,8 @@
     "redux": "^4.0.1",
     "wangct-mysql": "^1.0.8",
     "wangct-react": "^1.0.7",
-    "wangct-server-util": "^1.0.28",
-    "wangct-util": "^1.0.31",
+    "wangct-server-util": "^1.0.29",
+    "wangct-util": "^1.0.34",
     "wangct-webpack": "^1.0.6"
   }
 }
