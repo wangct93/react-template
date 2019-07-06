@@ -2,13 +2,15 @@
 
 # dependencies
 /node_modules
-/server/config/mysql.js
 /.idea
 
 # production
 /dist
+/logs
 
 # misc
 .DS_Store
 npm-debug.log*
+
+/basement.config.js
 
