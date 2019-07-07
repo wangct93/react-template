@@ -10,7 +10,7 @@
     "publish": "npm pu --registry https://registry.npmjs.org/"
   },
   "dependencies": {
-    "antd": "^3.20.0",
+    "antd": "^3.20.1",
     "cheerio": "^1.0.0-rc.3",
     "history": "^4.9.0",
     "iconv-lite": "^0.4.24",
@@ -21,8 +21,8 @@
     "redux": "^4.0.1",
     "request": "^2.88.0",
     "wangct-mysql": "^1.0.8",
-    "wangct-react": "^1.0.7",
-    "wangct-server-util": "^1.0.30",
+    "wangct-react": "^1.0.9",
+    "wangct-server-util": "^1.0.31",
     "wangct-util": "^1.0.35",
     "wangct-webpack": "^1.0.8"
   }
