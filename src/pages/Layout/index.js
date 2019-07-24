@@ -1,12 +1,11 @@
 import React, {PureComponent} from 'react';
-import util, {reactUtil} from 'wangct-util';
-import {Header} from '@lib';
+import util, {getDispatch,getHistory,getProps} from 'wangct-util';
+import {Header} from '../../components';
 
 import css from './index.less';
 
-const dispatch = reactUtil.getDispatch('global');
-const history = reactUtil.getHistory();
-const {getProps} = reactUtil;
+const dispatch = getDispatch('global');
+const history = getHistory();
 
 export default class Layout extends PureComponent {
   render() {

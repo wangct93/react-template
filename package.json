@@ -10,20 +10,13 @@
     "publish": "npm pu --registry https://registry.npmjs.org/"
   },
   "dependencies": {
-    "antd": "^3.20.1",
-    "cheerio": "^1.0.0-rc.3",
-    "history": "^4.9.0",
-    "iconv-lite": "^0.4.24",
+    "antd": "^3.20.5",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-router-dom": "^5.0.1",
-    "redux": "^4.0.1",
-    "request": "^2.88.0",
-    "wangct-mysql": "^1.0.8",
-    "wangct-react": "^1.0.9",
-    "wangct-server-util": "^1.0.31",
-    "wangct-util": "^1.0.35",
-    "wangct-webpack": "^1.0.8"
+    "wangct-mysql": "^1.0.9",
+    "wangct-react": "^1.0.17",
+    "wangct-react-entry": "^1.0.2",
+    "wangct-server-util": "^1.0.36",
+    "wangct-util": "^1.0.47",
+    "wangct-webpack": "^1.0.15"
   }
 }

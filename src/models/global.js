@@ -1,4 +1,4 @@
-import {reactUtil} from 'wangct-util';
+import {getHistory} from 'wangct-util';
 
 
 const {location} = window;
@@ -8,7 +8,7 @@ export default {
   state: {
     pathname:location.pathname,
     location,
-    history:reactUtil.getHistory()
+    history:getHistory()
   },
 
   effects: {
