@@ -10,13 +10,13 @@
     "publish": "npm pu --registry https://registry.npmjs.org/"
   },
   "dependencies": {
-    "antd": "^3.20.5",
-    "react": "^16.8.6",
+    "antd": "^3.24.3",
+    "react": "^16.11.0",
     "wangct-mysql": "^1.0.9",
-    "wangct-react": "^1.0.17",
-    "wangct-react-entry": "^1.0.2",
-    "wangct-server-util": "^1.0.36",
-    "wangct-util": "^1.0.47",
-    "wangct-webpack": "^1.0.15"
+    "wangct-react": "^1.0.19",
+    "wangct-react-entry": "^1.0.6",
+    "wangct-server-util": "^1.0.37",
+    "wangct-util": "^1.0.50",
+    "wangct-webpack": "^1.0.19"
   }
 }
