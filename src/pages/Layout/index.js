@@ -1,16 +1,20 @@
 import React, {PureComponent} from 'react';
-import util, {getDispatch,getHistory,getProps} from 'wangct-util';
 import {Header} from '../../components';
 
 import css from './index.less';
+import {Button} from "antd";
+import {pathTo, reduxConnect} from "wangct-react-entry";
+import {random} from "wangct-util";
 
-const dispatch = getDispatch('global');
-const history = getHistory();
-
+@reduxConnect(({global}) => (({
+  global,
+})))
 export default class Layout extends PureComponent {
   render() {
+    console.log(this.props);
     return <div className={css.container}>
       <Header />
+      <Button onClick={() => pathTo('/',{w:random()},true)}>点击</Button>
       <div className={css.body}>
         {
           this.props.children

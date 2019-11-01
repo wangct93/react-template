@@ -1,12 +1,8 @@
-import request from '../_entry/modules/request';
 
-function requestApi(url,options){
-  return request('/api' + url,options);
+import {request} from 'wangct-react-entry';
+
+
+export function requestApi(url,...args){
+  return request('/api' + url,...args);
 }
 
-export function doTest(params){
-  return requestApi('/test',{
-    method:'post',
-    body:params
-  })
-}

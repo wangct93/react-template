@@ -14,7 +14,7 @@
     "react": "^16.11.0",
     "wangct-mysql": "^1.0.9",
     "wangct-react": "^1.0.19",
-    "wangct-react-entry": "^1.0.6",
+    "wangct-react-entry": "^1.0.9",
     "wangct-server-util": "^1.0.37",
     "wangct-util": "^1.0.50",
     "wangct-webpack": "^1.0.19"
