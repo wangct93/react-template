@@ -1,27 +1,32 @@
-const util = require('wangct-server-util');
+const util = require('@wangct/node-util');
 const serverConfig = require('../server/config/server');
 
 const {resolve} = util;
 
 module.exports = {
+  html:'public/index.html',
+  port:9585,
   output:{
     build:{
       publicPath:'/assets/'
     }
   },
-  routes:[
-    {
-      path:'/',
-      component:'Layout'
-    }
-  ],
+  prod:{
+  },
   dynamicImport:true,
   disableCssModules:[
-    resolve('node_modules/wangct-react')
+    resolve('node_modules/@wangct/react')
   ],
-  proxy:{
-    '/api/':getProxyAddress()
-  }
+  devServer:{
+    proxy:{
+      '/api/':{
+        target:getProxyAddress(),
+        pathRewrite:{
+          '^/api':'',
+        },
+      }
+    },
+  },
 };
 
 

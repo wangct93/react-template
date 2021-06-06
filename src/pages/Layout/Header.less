@@ -1,0 +1,135 @@
+@import "../../styles/common";
+
+.container{
+  background-color:#F5F5F5;
+  z-index: 200;
+  color:#000;
+  padding-right: 20px;
+}
+
+.logo{
+  display: none;
+}
+
+.wrap{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav_box{
+  display: flex;
+  padding-right: 20px;
+  .nav{
+    @letterSpacing:3px;
+    display: block;
+    min-width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: @letterSpacing;
+    padding:0 10px 0 10px + @letterSpacing;
+    cursor: pointer !important;
+    &:hover,
+    &:global(.active){
+      background-color: #fff;
+      color:@activeColor;
+    }
+
+  }
+}
+
+.dropdown_menu{
+  min-width: 100px;
+  transform:translate(0,-4px);
+  :global(.active){
+    background-color: #e6f7ff;
+  }
+
+  :global(.w-link){
+    height: 40px;
+    line-height: 40px;
+    padding: 0 12px;
+  }
+
+}
+
+
+.right{
+  :global{
+    .ant-btn{
+      height: 50px;
+      width: 116px;
+      margin-left: 20px;
+      border-radius:0;
+    }
+  }
+}
+.login_btn{
+  color:#fff;
+}
+
+.user_box{
+  height: 50px;
+  .flex_parent();
+  align-items: center;
+  .text_user{
+    margin: 0 15px 0 8px;
+  }
+  .icon_user{
+    width: 22px;
+    height: 22px;
+    background: url("../../assets/images/icon_user.png") center no-repeat;
+    background-size: 100% 100%;
+  }
+  :global{
+    .anticon-caret-down{
+      color:rgba(176, 176, 176, 1);
+    }
+  }
+}
+
+
+.user_menu{
+  margin: 5px 0 0 -20px;
+}
+
+.user_menu_list{
+  background-color: #fff;
+  border: 1px solid @borderColor;
+  position: relative;
+  &:after{
+    content:'';
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    margin-left: -10px;
+  }
+  > li{
+    width: 80px;
+    padding: 0 15px;
+    line-height: 26px;
+    position: relative;
+    z-index: 100;
+    border-top: 1px solid @borderColor;
+    cursor: pointer;
+    &:first-child{
+      border-top-width: 0;
+    }
+
+    &:hover{
+      background-color: @activeColor;
+      color: #fff;
+    }
+  }
+}
+
+
+.text_bookshelf,
+.text_history{
+  margin-right: 20px;
+  color:#fff;
+}

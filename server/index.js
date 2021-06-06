@@ -1,18 +1,10 @@
 
 
 const config = require('./config/server');
-const util = require('wangct-server-util');
+const {Server} = require('@wangct/node-util');
 
-util.createServer({
+new Server({
   ...config,
-  port:getBsConfig().port || config.port
 });
 
 
-function getBsConfig(){
-  let bsConfig = {};
-  try{
-    bsConfig = require(util.resolve('basement.config.js'));
-  }catch(e){}
-  return bsConfig;
-}

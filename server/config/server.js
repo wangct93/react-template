@@ -3,8 +3,20 @@
  */
 
 module.exports = {
-  port:6789,
-  html:'dist/index.html',
-  assets:['dist'],
-  assetsPaths:['assets']
+  port:8080,
+  assets:['dist','server/assets'],
+  assetsPaths:['assets','/'],
+  userPathExclude:[
+    '/',
+    '/book',
+    '/chapter',
+    '/dic',
+    '/file',
+    '/voice',
+    '/user/login',
+    '/user/create',
+    '/user/logout',
+    '/keyword',
+    '/rank',
+  ],
 };

@@ -1,0 +1,84 @@
+@import "./normal";
+
+@scrollbarWidth:15px;
+@headerHeight:50px;
+@footerHeight:128px;
+@activeColor:#1890ff;
+
+@borderColor:#ddd;
+@border:1px solid @borderColor;
+
+@formActiveColor:#f6f7ff;
+
+@tableHeight:calc(100vh - @headerHeight - @footerHeight);
+
+.full-width(){
+  width: 100%;
+}
+
+.full-height(){
+  height: 100%;
+}
+
+.full(){
+  .full-width();
+  .full-height();
+}
+
+.flex_parent(){
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_parent_column(){
+  .flex_parent();
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex_child(){
+  flex:1;
+  width: 0;
+}
+
+.flex_child_column(){
+  .flex_child();
+  height: 0;
+  width: auto;
+}
+
+.flex_center(){
+  .flex_parent();
+  align-items: center;
+  justify-content: center;
+}
+
+.body_content(){
+  background-color: #fff;
+  border-radius: .10rem;
+  overflow: auto;
+  height: 100%;
+}
+
+.div_bg(){
+  background:center no-repeat;
+  background-size: contain;
+}
+
+.div_bg_full(){
+  background-size: 100% 100%;
+}
+
+
+.text_ellipsis(){
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text_ellipsis{
+  .text_ellipsis();
+}
+
+
+

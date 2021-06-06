@@ -1,16 +1,22 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
+/src/frame
 /.idea
+/book
+/book.tar
+/book.tar.gz
+/service.pid
 
 # production
 /dist
 /logs
+/basement.config.js
+/temp
+/debug.log
 
 # misc
 .DS_Store
 npm-debug.log*
 
-/basement.config.js
 

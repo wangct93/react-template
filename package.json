@@ -1,22 +1,46 @@
 {
   "name": "template",
   "version": "1.0.0",
-  "description": "",
+  "description": "模板",
   "main": "index.js",
   "scripts": {
-    "start": "wangct-webpack",
+    "start": "dev",
     "server": "node server",
-    "build": "wangct-webpack build",
-    "publish": "npm pu --registry https://registry.npmjs.org/"
+    "server-debug": "node --inspect server",
+    "server-pm2": "pm2 start server --name server-book",
+    "build": "dev build",
+    "pu": "npm pu --registry https://registry.npmjs.org/",
+    "login": "npm login --registry https://registry.npmjs.org/",
+    "test": "node test",
+    "update": "node scripts/update",
+    "install-product": "node scripts/installNodePackage",
+    "pack": "node scripts/pack",
+    "run": "node scripts/run"
   },
   "dependencies": {
-    "antd": "^3.24.3",
-    "react": "^16.11.0",
-    "wangct-mysql": "^1.0.9",
-    "wangct-react": "^1.0.19",
-    "wangct-react-entry": "^1.0.9",
-    "wangct-server-util": "^1.0.37",
-    "wangct-util": "^1.0.50",
-    "wangct-webpack": "^1.0.19"
+    "ali-oss": "^6.12.0",
+    "baidu-aip-sdk": "^2.4.6",
+    "cheerio": "^1.0.0-rc.5",
+    "iconv-lite": "^0.6.2",
+    "mime-types": "^2.1.27",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "@wangct/mysql": "^1.0.1",
+    "@wangct/node-util": "^1.0.7",
+    "@wangct/react": "^1.0.6-test.2",
+    "@wangct/util": "^1.0.11",
+    "@wangct/webpack": "^1.0.22",
+    "antd": "^3.26.20",
+    "codemirror": "^5.61.0",
+    "path-to-regexp": "^6.2.0",
+    "react": "^16.14.0",
+    "react-codemirror2": "^7.2.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "shelljs": "^0.8.4"
   }
 }

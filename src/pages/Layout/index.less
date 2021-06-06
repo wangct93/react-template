@@ -1,14 +1,33 @@
-@import "../../less/base";
-
-
-ul{
-  margin: 0;
-}
+@import "../../styles/common";
 
 .container{
-  padding-top: @headerHeight;
+  position: relative;
 }
 
 .body{
-  flex:1;
+  min-height: 500px;
+  background-color: #fff;
+  overflow: auto;
+}
+
+:global{
+  .text-click{
+    color:@fontColor;
+    &:hover{
+      color:@activeColor;
+    }
+  }
+
+  .fixed-width{
+    width:1200px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  :global{
+    .fixed-width{
+      width: 100%;
+    }
+  }
 }
