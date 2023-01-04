@@ -31,7 +31,7 @@
     "@wangct/node-util": "^1.0.7",
     "@wangct/react": "^1.0.6-test.2",
     "@wangct/util": "^1.0.11",
-    "@wangct/webpack": "^1.0.22",
+    "@wangct/webpack": "^1.1.16",
     "antd": "^3.26.20",
     "codemirror": "^5.61.0",
     "path-to-regexp": "^6.2.0",
